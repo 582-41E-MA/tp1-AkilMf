@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VeloController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Home Page 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+
+
+// Affiche all bikes from db.velos
+Route::get('/velos', [VeloController::class, 'index'])->name('velo.index');
+
+
+// Affiche 1 bike ( show method)
