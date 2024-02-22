@@ -12,8 +12,12 @@
                     <div class="small mb-1">Réf : 8544956</div>
                     <h1 class="display-5 fw-bolder">{{ $velo->name }}</h1>
                     <div class="fs-5 mb-5">
-                        <span class="text-decoration-line-through">{{ $velo->sale ? '$'.$velo->price : 'Sale' }}</span>
-                        <span>${{ $velo->salePrice }}</span>
+                        @if($velo->sale == 1)
+                            <span class="text-muted text-decoration-line-through">${{ $velo->price }}</span>
+                            ${{ $velo->salePrice }}
+                            @else 
+                            ${{ $velo->price }}
+                        @endif
                     </div>
                     <!-- <p class="lead">Nous avons conçu ce vélo spécialement pour les débutants : des pneus rassurants, des
                         changements de vitesse simplifiés, un monoplateau et un guidon courbé. Son monoplateau qui
