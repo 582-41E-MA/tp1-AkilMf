@@ -24,12 +24,12 @@
                         facilite les changements de vitesse. Pneus de 32 mm assurant votre confort sur les routes.</p> -->
                     <p class="lead">{{ $velo->description }}</p>
                     <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                        <input disabled class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
                             style="max-width: 3rem" />
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <a class="btn btn-outline-dark flex-shrink-0" type="button" href="{{route('velo.checkout', $velo->id)}}">
                             <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
+                            Buy
+                        </a>
                     </div>
                 </div>
             </div>

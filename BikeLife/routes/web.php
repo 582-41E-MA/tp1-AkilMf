@@ -23,3 +23,4 @@ use App\Http\Controllers\VeloController;
 // });
 Route::get('/', [VeloController::class, 'index'])->name('velo.index');
 Route::get('/velo/{velo}', [VeloController::class, 'show'])->name('velo.show');
+Route::get('/velo/checkout/{velo}', [VeloController::class, 'checkout'])->name('velo.checkout');

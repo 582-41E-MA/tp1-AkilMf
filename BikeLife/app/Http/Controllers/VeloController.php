@@ -43,6 +43,15 @@ class VeloController extends Controller
     }
 
     /**
+     * Checkout of the specified resource.
+     */
+    public function checkout(Velo $velo)
+    {
+        //$task =  select * from table where id = $task
+        return view('velo.checkout', ['velo' => $velo]);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Velo $velo)
