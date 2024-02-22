@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
+            $table->foreign('id')->references('id')->on('velos')->onDelete('cascade');
             $table->timestamps();
         });
     }
