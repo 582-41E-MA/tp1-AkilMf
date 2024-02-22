@@ -7,18 +7,18 @@
         <div class="container px-4 px-lg-5 my-5">
             <div class="row gx-4 gx-lg-5 align-items-center">
                 <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
-                        src="https://contents.mediadecathlon.com/p1662199/0125f06ba040cb974d75b911842422a90e2530bca629f309362cfa98130ad661/velo-de-route-homme-shimano-a050-rc-100-gris-metal.jpg?format=auto"
-                        alt="..." /></div>
+                        src="{{asset('img').'/'.$velo->path}}" alt="{{ $velo->name }}" /></div>
                 <div class="col-md-6">
                     <div class="small mb-1">Réf : 8544956</div>
-                    <h1 class="display-5 fw-bolder">Vélo de route Shimano A050 - RC 100 gris metal</h1>
+                    <h1 class="display-5 fw-bolder">{{ $velo->name }}</h1>
                     <div class="fs-5 mb-5">
-                        <span class="text-decoration-line-through">$390.00</span>
-                        <span>$350.00</span>
+                        <span class="text-decoration-line-through">{{ $velo->sale ? '$'.$velo->price : 'Sale' }}</span>
+                        <span>${{ $velo->salePrice }}</span>
                     </div>
-                    <p class="lead">Nous avons conçu ce vélo spécialement pour les débutants : des pneus rassurants, des
+                    <!-- <p class="lead">Nous avons conçu ce vélo spécialement pour les débutants : des pneus rassurants, des
                         changements de vitesse simplifiés, un monoplateau et un guidon courbé. Son monoplateau qui
-                        facilite les changements de vitesse. Pneus de 32 mm assurant votre confort sur les routes.</p>
+                        facilite les changements de vitesse. Pneus de 32 mm assurant votre confort sur les routes.</p> -->
+                    <p class="lead">{{ $velo->description }}</p>
                     <div class="d-flex">
                         <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
                             style="max-width: 3rem" />
